@@ -1,0 +1,20 @@
+welcome: I'm going to help you to find next bus comming to you
+
+round: Can you repeat the numbers {{ numbers|join(", ") }} backwards?
+
+win: Good job!
+
+lose: Sorry, that's the wrong answer.
+
+square: Square of {{ asked }} is {{ result }}
+
+comming: Next bus is comming in 3 minutes
+
+arrivals: Next busses {{ arrivals|join(", ") }}
+
+configure: It's configuration time. Please find out 5-digit bus stop you want to remember and tell me those numbers. You might want to use Transport For London website.
+
+configure_bus_stop: I found bus stop called «{{bus_stop_name}}». Is that correct?"
+
+configure_bus_stop_not_found: I coulnd't find the bus stop {{bus_stop_number}}, please try again
+
