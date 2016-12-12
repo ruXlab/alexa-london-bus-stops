@@ -4,60 +4,39 @@
       "intent": "YesIntent"
     },
     {
-      "intent": "AnswerIntent",
-      "slots": [
-        {
-          "name": "first",
-          "type": "AMAZON.NUMBER"
-        },
-        {
-          "name": "second",
-          "type": "AMAZON.NUMBER"
-        },
-        {
-          "name": "third",
-          "type": "AMAZON.NUMBER"
-        }
-      ]
-    },
-    {
-      "intent": "SquareIntent",
-      "slots": [
-        {
-          "name": "number",
-          "type": "AMAZON.NUMBER"
-        }
-      ]
+      "intent": "NoIntent"
     },
 
     {
-      "intent": "ConfigureIntent",
+      "intent": "ConfigureBusStopIntent",
       "slots": [
-        {
-          "name": "first",
-          "type": "AMAZON.NUMBER"
-        },
-        {
-          "name": "second",
-          "type": "AMAZON.NUMBER"
-        },
-        {
-          "name": "third",
-          "type": "AMAZON.NUMBER"
-        },
-        {
-          "name": "forth",
-          "type": "AMAZON.NUMBER"
-        },
-        {
-          "name": "fifth",
-          "type": "AMAZON.NUMBER"
-        }
-      ]
+			{
+			  "name": "number_first",
+			  "type": "AMAZON.NUMBER"
+			},
+			{
+			  "name": "number_second",
+			  "type": "AMAZON.NUMBER"
+			},
+			{
+			  "name": "number_third",
+			  "type": "AMAZON.NUMBER"
+			}
+       ]
     },
 	{
       "intent": "CommingIntent",
       "slots": []
+    },
+	{
+      "intent": "ConfigureIntent",
+      "slots": []
+    },
+    {
+      "intent": "AMAZON.HelpIntent"
+    },
+    {
+      "intent": "AMAZON.StopIntent"
     }
 
   ]

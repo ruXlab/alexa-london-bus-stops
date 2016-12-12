@@ -1,22 +1,29 @@
 YesIntent yes
-
 YesIntent sure
+YesIntent yes please
+YesIntent of course
 
+NoIntent no
+NoIntent not now
+NoIntent no thanks
                   
-
-AnswerIntent {first} {second} {third}
-
-AnswerIntent {first} {second} and {third}
-
-SquareIntent square up {number}
-SquareIntent {number}
-
 CommingIntent comming
 CommingIntent is comming
 CommingIntent will arrive
 CommingIntent next busses
 CommingIntent update
+CommingIntent arrivals
+CommingIntent arrival
 
 
-ConfigureIntent {first} {second} {third} {forth} {fifth}
-ConfigureIntent {first} {second} {third} {forth} and {fifth}
+ConfigureIntent setup
+ConfigureIntent configure
+ConfigureIntent set up
+ConfigureIntent set bus stop
+ConfigureIntent configure skill
+ConfigureIntent configuration
+
+
+ConfigureBusStopIntent {number_first}
+ConfigureBusStopIntent {number_first} {number_second}
+ConfigureBusStopIntent {number_first} {number_second} {number_third}
