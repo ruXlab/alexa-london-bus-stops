@@ -14,6 +14,7 @@ arrivals: Next busses {{ arrivals|join(", ") }}
 
 configure: Please find out 5-digit bus stop number you use and tell me those numbers. You might want to use Transport For London website.
 configure_repeat: No problem, let's start again. Please say 5-digit bus stop number you use and tell me those numbers. You might want to use Transport For London website.
+configure_first_time: Sure, we just need to set up things.
 
 configure_bus_stop: I found bus stop called «{{bus_stop_name}}». Is that correct?"
 

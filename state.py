@@ -11,20 +11,24 @@ class State:
         self.userId = _session.user.userId or None
 
     def load_user_data(self):
-        json = {}
+        user_data = {}
         try:
             with open(self.data_file()) as data_file:    
-                json = json.load(data_file)
+                user_data = json.load(data_file)
         except IOError as e:
             pass
-        if len(json) == 0:
-            json = {'createdAt': time.strftime("%c")}
-        return json
+        if len(user_data) == 0:
+            user_data = {'createdAt': time.strftime("%c")}
+        return user_data
 
     def update_busstop(self, naptan_code):
         user_data = self.load_user_data()
         user_data['mystop'] = naptan_code
         self.save_user_data(user_data)
+
+    def get_busstop(self):
+        return self.load_user_data().get('mystop', None)
+
 
     def save_user_data(self, user_data):
         with open(self.data_file(), 'w') as outfile:
@@ -40,4 +44,6 @@ class State:
         user_data = self.load_user_data()
         user_data['current'] = state
         self.save_user_data()
+
+    
 
