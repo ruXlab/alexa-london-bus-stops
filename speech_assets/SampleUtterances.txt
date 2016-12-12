@@ -2,6 +2,7 @@ YesIntent yes
 YesIntent sure
 YesIntent yes please
 YesIntent of course
+YesIntent correct
 
 NoIntent no
 NoIntent not now
@@ -14,6 +15,8 @@ CommingIntent next busses
 CommingIntent update
 CommingIntent arrivals
 CommingIntent arrival
+CommingIntent when is next bus
+
 
 
 ConfigureIntent setup

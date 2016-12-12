@@ -37,7 +37,7 @@ def configure(is_repeat = False):
 @ask.intent("ConfigureBusStopIntent", convert={'number_first': int, 'number_second': int, 'number_third': int})
 def configure_bus_stop(number_first, number_second, number_third):
     number = ''.join([str(i) for i in [number_first, number_second, number_third] if i != None])
-    if session.attributes['mode'] != "configuration":
+    if (session.attributes['mode'] or None) != "configuration":
         return statement("To start configuration say {}".format(command_config))
 
     logging.debug("Got input from user {}".format(number))
@@ -55,10 +55,13 @@ def configure_bus_stop(number_first, number_second, number_third):
 
 @ask.intent("CommingIntent")
 def arrivals():
+    state = State(session)
+    naptan_code = state.get_busstop()
+    if not naptan_code:
+        session.attributes['mode'] = 'configuration'
+        return question("{}. {}".format(render_template('configure_first_time'), render_template('configure')))
 
-    busstop = "490012651S"
-
-    arrivals = TFL.arrivals(busstop)
+    arrivals = TFL.arrivals(naptan_code)
     arrivals = [ "#{} in {}minutes".format(i[0], math.floor(i[1]/60)) for i in arrivals ]
     msg = render_template('arrivals', arrivals=arrivals)
 
@@ -92,6 +95,10 @@ def no():
 @ask.session_ended
 def session_ended():
     return "Don't be late", 200
+
+@ask.intent("AMAZON.StopIntent")
+def stop():
+    return session_ended()
 
 @ask.intent("AMAZON.HelpIntent") 
 def help():
