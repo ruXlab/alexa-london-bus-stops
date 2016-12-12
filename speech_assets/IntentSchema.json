@@ -1,0 +1,64 @@
+{
+  "intents": [
+    {
+      "intent": "YesIntent"
+    },
+    {
+      "intent": "AnswerIntent",
+      "slots": [
+        {
+          "name": "first",
+          "type": "AMAZON.NUMBER"
+        },
+        {
+          "name": "second",
+          "type": "AMAZON.NUMBER"
+        },
+        {
+          "name": "third",
+          "type": "AMAZON.NUMBER"
+        }
+      ]
+    },
+    {
+      "intent": "SquareIntent",
+      "slots": [
+        {
+          "name": "number",
+          "type": "AMAZON.NUMBER"
+        }
+      ]
+    },
+
+    {
+      "intent": "ConfigureIntent",
+      "slots": [
+        {
+          "name": "first",
+          "type": "AMAZON.NUMBER"
+        },
+        {
+          "name": "second",
+          "type": "AMAZON.NUMBER"
+        },
+        {
+          "name": "third",
+          "type": "AMAZON.NUMBER"
+        },
+        {
+          "name": "forth",
+          "type": "AMAZON.NUMBER"
+        },
+        {
+          "name": "fifth",
+          "type": "AMAZON.NUMBER"
+        }
+      ]
+    },
+	{
+      "intent": "CommingIntent",
+      "slots": []
+    }
+
+  ]
+}

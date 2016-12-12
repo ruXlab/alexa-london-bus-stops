@@ -1,0 +1,22 @@
+YesIntent yes
+
+YesIntent sure
+
+                  
+
+AnswerIntent {first} {second} {third}
+
+AnswerIntent {first} {second} and {third}
+
+SquareIntent square up {number}
+SquareIntent {number}
+
+CommingIntent comming
+CommingIntent is comming
+CommingIntent will arrive
+CommingIntent next busses
+CommingIntent update
+
+
+ConfigureIntent {first} {second} {third} {forth} {fifth}
+ConfigureIntent {first} {second} {third} {forth} and {fifth}
