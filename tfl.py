@@ -4,18 +4,16 @@ import csv
 
 logger = logging.getLogger("tfl").setLevel(logging.DEBUG)
 
+stops = dict()
+with open("data/LondonStops.csv") as tsv:
+	reader = csv.reader(tsv, dialect="excel-tab")
+	#tsv.next(reader)
+	for line in reader:
+		stops[line[0]] = (line[1], line[2])
+	logging.info("Loaded {} bus stops".format(len(stops)))
+
 
 class TFL:
-	stops = dict()
-
-	def __init__():
-		with open("tab-separated-values") as tsv:
-			reader = csv.reader(tsv, dialect="excel-tab")
-			csv.next(reader)
-			for line in reader:
-				stops[line[0]] = (line[1], line[2])
-			logging.info("Loaded {} bus stops".format(len(stops)))
-
 	def arrivals(bus_stop):
 		'''
 		Returns list of [bus_number, arrival_in_seconds]
@@ -32,4 +30,4 @@ class TFL:
 		return [ [k,v] for k, v in m.items() ]
 		
 	def lookup_bus_stop(short_number):
-		return stops[short_number]
+		return stops.get(short_number, None)

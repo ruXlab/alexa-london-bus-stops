@@ -12,7 +12,8 @@ comming: Next bus is comming in 3 minutes
 
 arrivals: Next busses {{ arrivals|join(", ") }}
 
-configure: It's configuration time. Please find out 5-digit bus stop you want to remember and tell me those numbers. You might want to use Transport For London website.
+configure: Please find out 5-digit bus stop number you use and tell me those numbers. You might want to use Transport For London website.
+configure_repeat: No problem, let's start again. Please say 5-digit bus stop number you use and tell me those numbers. You might want to use Transport For London website.
 
 configure_bus_stop: I found bus stop called «{{bus_stop_name}}». Is that correct?"
 
