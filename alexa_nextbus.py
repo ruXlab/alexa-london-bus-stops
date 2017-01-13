@@ -24,6 +24,11 @@ def skill_opened():
     state = State(session)
     logging.debug("Current state is ".format(state.load_user_data()))
     welcome_msg = render_template('welcome')
+    if State(session).get_busstop():
+        welcome_msg = welcome_msg + "Say «update» to get recent information about your bus stop"
+    else:
+        welcome_msg = welcome_msg + "Say «configure» to set up bus stop you use"
+
     return question(welcome_msg)
 
 
