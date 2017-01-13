@@ -102,7 +102,14 @@ def stop():
 
 @ask.intent("AMAZON.HelpIntent") 
 def help():
-    return statement("It's a help section. To configure skill say ".format(command_config))
+    txt = ""
+    if State(session).get_busstop():
+        txt = "To get updates for saved bus stop say «update»." 
+    return question("It's unofficial skill for Transport For London bus network. I can help you to figureout when your bus is comming. {} To configure skill say «cofigure»".format(txt))
+
+@ask.intent("AMAZON.StopIntent") 
+def stop():
+    return statement("Don't be late")
 
 @app.teardown_request
 def teardown_request(exception=None):
