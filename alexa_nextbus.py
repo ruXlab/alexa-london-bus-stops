@@ -25,9 +25,10 @@ def skill_opened():
     logging.debug("Current state is ".format(state.load_user_data()))
     welcome_msg = render_template('welcome')
     if State(session).get_busstop():
-        welcome_msg = welcome_msg + "Say «update» to get recent information about your bus stop"
+        return arrivals()
+#        welcome_msg = welcome_msg + "Say «update» to get recent information about your bus stop"
     else:
-        welcome_msg = welcome_msg + "Say «configure» to set up bus stop you use"
+        welcome_msg = welcome_msg + "It is Lonbon Bus Stop and I can help you to find next bus comming to you. Say «configure» to set up bus stop you use"
 
     return question(welcome_msg)
 
@@ -97,13 +98,11 @@ def no():
 
 
 
-@ask.session_ended
+#@ask.session_ended
 def session_ended():
-    return "Don't be late", 200
+    return statement("Don't be late")
 
-@ask.intent("AMAZON.StopIntent")
-def stop():
-    return session_ended()
+
 
 @ask.intent("AMAZON.HelpIntent") 
 def help():
@@ -114,7 +113,12 @@ def help():
 
 @ask.intent("AMAZON.StopIntent") 
 def stop():
-    return statement("Don't be late")
+    return session_ended()
+
+@ask.intent("AMAZON.CancelIntent")
+def cancel():
+    return session_ended()
+
 
 @app.teardown_request
 def teardown_request(exception=None):
