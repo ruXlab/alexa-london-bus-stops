@@ -1,4 +1,4 @@
-welcome: I'm going to help you to find next bus comming to you. 
+welcome: It is Lonbon Bus Stop and I can help you to find next bus comming to you. 
 
 round: Can you repeat the numbers {{ numbers|join(", ") }} backwards?
 
