@@ -1,12 +1,18 @@
 welcome: It is Lonbon Bus Stop and I can help you to find next bus comming to you. 
 
-round: Can you repeat the numbers {{ numbers|join(", ") }} backwards?
+welcome_and_configure: |
+    It is London Bus Stop and I can help you to find next bus coming to you. 
+    Say «configure» to set up bus stop you use 
 
-win: Good job!
+ask_again: |
+    Sorry, I didn't get it. Please try to ask me again
 
-lose: Sorry, that's the wrong answer.
+help: |
+    It's unofficial skill for Transport For London bus network. 
+    I can help you to figureout when your bus is comming. {{extra}} To configure skill say «cofigure»
 
-square: Square of {{ asked }} is {{ result }}
+howto_get_updates: |
+    To get updates for saved bus stop say «update».
 
 comming: Next bus is comming in 3 minutes
 

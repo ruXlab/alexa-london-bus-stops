@@ -23,13 +23,11 @@ command_next_stop = "Alexa ask bus for arrivals"
 def skill_opened():
     state = State(session)
     logging.debug("Current state is ".format(state.load_user_data()))
-    welcome_msg = render_template('welcome')
     if State(session).get_busstop():
         return arrivals()
     else:
-        welcome_msg = "It is London Bus Stop and I can help you to find next bus coming to you. Say «configure» to set up bus stop you use"
-
-    return question(welcome_msg)
+        welcome_msg = render_template("welcome_and_configure")
+        return question(welcome_msg)
 
 
 @ask.intent("ConfigureIntent")
@@ -82,7 +80,7 @@ def yes():
         state.update_busstop(naptan_code)
         return statement("Ok, I remembered that. To use say «{}»".format(command_next_stop))
 
-    return statement("Sorry, I didn't get it. Please try to ask me again")
+    return statement(render_template("ask_again"))
 
 @ask.intent("NoIntent")
 def no():
@@ -93,7 +91,7 @@ def no():
         session.attributes['naptan_code'] = None
         return configure(is_repeat = True)
 
-    return statement("Sorry, I didn't get it. Please try to ask me again")
+    return statement(render_template("ask_again"))
 
 
 
@@ -107,8 +105,9 @@ def session_ended():
 def help():
     txt = ""
     if State(session).get_busstop():
-        txt = "To get updates for saved bus stop say «update»." 
-    return question("It's unofficial skill for Transport For London bus network. I can help you to figureout when your bus is comming. {} To configure skill say «cofigure»".format(txt))
+        txt = render_template("howto_get_updates") 
+    
+    return question(render_template("help", extra = txt))
 
 @ask.intent("AMAZON.StopIntent") 
 def stop():
