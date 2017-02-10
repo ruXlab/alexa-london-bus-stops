@@ -26,9 +26,8 @@ def skill_opened():
     welcome_msg = render_template('welcome')
     if State(session).get_busstop():
         return arrivals()
-#        welcome_msg = welcome_msg + "Say «update» to get recent information about your bus stop"
     else:
-        welcome_msg = welcome_msg + "It is Lonbon Bus Stop and I can help you to find next bus comming to you. Say «configure» to set up bus stop you use"
+        welcome_msg = "It is London Bus Stop and I can help you to find next bus coming to you. Say «configure» to set up bus stop you use"
 
     return question(welcome_msg)
 
