@@ -16,7 +16,7 @@ ask = Ask(app, "/")
 logging.getLogger("flask_ask").setLevel(logging.DEBUG)
 
 command_config = "Alexa ask bus stop to configure"
-command_next_stop = "Alexa ask bus for arrivals"
+command_next_stop = "Alexa ask bus stop for arrivals"
 
 
 @ask.launch
