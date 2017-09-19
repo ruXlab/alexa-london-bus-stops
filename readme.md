@@ -1,3 +1,10 @@
+London bus stops Amazon Alexa skill
+===================================
+
+This skill allows users to get updates about buses coming to saved bus stop in London 
+
+
+Service is Powered by TfL Open Data
 
 
 
@@ -5,9 +12,8 @@
 
 
 
+### Where to get dataset?
 
-London Bus stops database
-=======================
 
 
 * http://naptan.app.dft.gov.uk/datarequest/help (GTFS dataset)
@@ -18,7 +24,6 @@ London Bus stops database
 ```
 
 
-Dependencies
-========================
-*  ```sudo apt-get install python3.5 python3-setuptools python3.5-dev build-essential ```
+### Dependencies
+* Python 3.5, ```sudo apt-get install python3.5 python3-setuptools python3.5-dev build-essential ```
 *  (inside virtualenv) ```pip install flask flask-ask encodings requests```
