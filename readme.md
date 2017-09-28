@@ -1,7 +1,10 @@
 London bus stops Amazon Alexa skill
 ===================================
 
+
 This skill allows users to get updates about buses coming to saved bus stop in London 
+
+Skill is [available at Amazon Alexa Store](https://www.amazon.co.uk/ruX-lab-London-bus-stops/dp/B01N4DKTNY) for free
 
 
 Service is Powered by TfL Open Data
