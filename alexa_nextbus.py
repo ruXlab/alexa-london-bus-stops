@@ -73,7 +73,11 @@ def arrivals():
 def formatBusArrival(busAndTime):
     """ Accepts tuple (busNumber, arrivalTimeInSeconds) """
     eta = math.floor(busAndTime[1]/60)
-    eta = "is due" if eta == 0 else "in {} minutes".format(eta)
+
+    if eta == 0: eta = "is due"
+    elif eta == 1: eta = "in one minute"
+    else: eta = "in {} minutes".format(eta)
+
     return "#{} {}".format(busAndTime[0], eta)
 
 @ask.intent("YesIntent")
