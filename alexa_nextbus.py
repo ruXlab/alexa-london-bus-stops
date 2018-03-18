@@ -65,11 +65,16 @@ def arrivals():
         return question("{}. {}".format(render_template('configure_first_time'), render_template('configure')))
 
     arrivals = TFL.arrivals(naptan_code)
-    arrivals = [ "#{} in {}minutes".format(i[0], math.floor(i[1]/60)) for i in arrivals ]
+    arrivals = [ formatBusArrival(i) for i in arrivals ]
     msg = render_template('arrivals', arrivals=arrivals)
 
     return statement(msg)
 
+def formatBusArrival(busAndTime):
+    """ Accepts tuple (busNumber, arrivalTimeInSeconds) """
+    eta = math.floor(busAndTime[1]/60)
+    eta = "is due" if eta == 0 else "in {} minutes".format(eta)
+    return "#{} {}".format(busAndTime[0], eta)
 
 @ask.intent("YesIntent")
 def yes():
