@@ -104,7 +104,7 @@ def no():
 
 
 
-#@ask.session_ended
+@ask.session_ended
 def session_ended():
     return statement("Don't be late")
 

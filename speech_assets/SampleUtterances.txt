@@ -9,14 +9,17 @@ NoIntent not now
 NoIntent no thanks
                   
 CommingIntent comming
+CommingIntent coming
 CommingIntent is comming
+CommingIntent is coming
 CommingIntent will arrive
 CommingIntent next busses
 CommingIntent update
 CommingIntent arrivals
 CommingIntent arrival
 CommingIntent when is next bus
-
+CommingIntent when is the next bus
+CommingIntent is arriving
 
 
 ConfigureIntent setup
